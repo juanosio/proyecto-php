@@ -1,0 +1,13 @@
+vendor/
+.env
+cache/*
+!cache/.gitkeep
+node_modules/
+public/css/tailwind.css
+public/uploads/*
+!public/uploads/.gitkeep
+tailwindcss
+tailwindcss.exe
+.DS_Store
+*.log
+thumbs.db
