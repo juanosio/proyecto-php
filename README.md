@@ -1,4 +1,4 @@
-# chanchullapp
+# chanchullapp 🐙
 
 sistema para normalizar precios de tickets fiscales usando ocr con inteligencia artificial.
 
@@ -20,13 +20,11 @@ sistema para normalizar precios de tickets fiscales usando ocr con inteligencia 
 ### 1. instalar php y composer
 
 - **windows**: descarga [xampp](https://www.apachefriends.org/) (incluye php y mysql)
-- **mac**: `brew install php` o usa [mamp](https://www.mamp.info/)
 - **composer**: descargalo desde [getcomposer.org](https://getcomposer.org/download/)
 
 ### 2. abrir la terminal
 
 - **windows**: busca "cmd" o "powershell" en el menu inicio
-- **mac**: busca "terminal" en launchpad
 
 navega hasta la carpeta del proyecto:
 
@@ -79,7 +77,7 @@ composer server
 esto enciende el sistema en http://localhost:8000
 
 abre esa direccion en tu navegador. si ves la pantalla de
-"bienvenido al motor smartparse", todo funciona.
+"bienvenido a chanchullapp", todo funciona.
 
 ### 7. (opcional) activar tailwind
 
