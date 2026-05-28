@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'smartparse ocr')</title>
+    <title>@yield('title', 'chanchullapp')</title>
     <link rel="stylesheet" href="/css/tailwind.css">
     <link rel="stylesheet" href="/css/app.css">
 </head>
@@ -12,7 +12,7 @@
     <div class="min-h-screen flex flex-col justify-between">
 
         <header class="bg-blue-600 text-white p-4 shadow-md">
-            <span class="font-bold text-xl">smartparse retail</span>
+            <span class="font-bold text-xl">chanchullapp</span>
         </header>
 
         <main class="flex-grow p-6">
@@ -28,7 +28,7 @@
         </main>
 
         <footer class="bg-gray-800 text-gray-400 text-center p-3 text-sm">
-            &copy; 2026 - algoritmo de inteligencia de precios ocr
+            &copy; 2026 - chanchullapp
         </footer>
 
     </div>

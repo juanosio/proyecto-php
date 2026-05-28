@@ -8,7 +8,7 @@ $router->get('/api/status', function () {
     header('Content-Type: application/json');
     echo json_encode([
         'status'  => 'ok',
-        'app'     => 'smartparse ocr',
+        'app'     => 'chanchullapp',
         'version' => '1.0.0',
     ]);
 });

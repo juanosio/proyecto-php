@@ -1,4 +1,4 @@
-# smartparse ocr
+# chanchullapp
 
 sistema para normalizar precios de tickets fiscales usando ocr con inteligencia artificial.
 
@@ -31,7 +31,7 @@ sistema para normalizar precios de tickets fiscales usando ocr con inteligencia 
 navega hasta la carpeta del proyecto:
 
 ```bash
-cd ruta/donde/descargaste/smart-parse-ocr
+cd ruta/donde/descargaste/chanchullapp
 ```
 
 > si no sabes que ruta poner, escribe `cd` y arrastra la carpeta
@@ -57,7 +57,7 @@ abrelo con bloc de notas y ajusta estos datos:
 ```
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_NAME=smartparse_ocr
+DB_NAME=chanchullapp
 DB_USER=root
 DB_PASS=
 ```
@@ -68,7 +68,7 @@ si usas xampp, los valores de arriba ya funcionan sin cambios.
 
 abre xampp y enciende mysql. luego abre phpmyadmin
 (http://localhost/phpmyadmin) y crea una base de datos llamada
-`smartparse_ocr`.
+`chanchullapp`.
 
 ### 6. iniciar el servidor
 
@@ -130,7 +130,7 @@ navegador                    servidor php                     base de datos
 ## estructura del proyecto (explicada)
 
 ```
-smart-parse-ocr/
+chanchullapp/
 │
 ├── .env                     # tus claves y contraseñas (no se sube a git)
 ├── .env.example             # ejemplo de .env (para que sepas que poner)

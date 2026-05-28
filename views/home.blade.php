@@ -4,7 +4,7 @@
 <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-md">
 
     <h1 class="text-3xl font-extrabold text-gray-800 tracking-tight">
-        bienvenido al motor smartparse
+        bienvenido a chanchullapp
     </h1>
 
     <p class="text-gray-600 mt-2">

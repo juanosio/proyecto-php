@@ -1,6 +1,6 @@
 {
-    "name": "smartparse/smart-parse-ocr",
-    "description": "SmartParse OCR - mini framework mvc para normalizacion de precios con ia",
+    "name": "chanchullapp/chanchullapp",
+    "description": "chanchullapp - sistema para normalizar precios de facturas con ia",
     "type": "project",
     "require": {
         "php": ">=8.0",
