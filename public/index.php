@@ -6,11 +6,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Dotenv\Dotenv;
 
-// 1. cargar variables de entorno desde .env
 $dotenv = Dotenv::createImmutable(__DIR__ . '/..');
 $dotenv->safeLoad();
 
-// 2. conectar a mysql con pdo
 $pdo = null;
 $dbError = null;
 
@@ -37,7 +35,6 @@ try {
     $dbError = $e->getMessage();
 }
 
-// 3. inicializar motor de plantillas blade
 $bladeContainer = new \Jenssegers\Blade\Container;
 \Jenssegers\Blade\Container::setInstance($bladeContainer);
 $blade = new \Jenssegers\Blade\Blade(
@@ -46,14 +43,11 @@ $blade = new \Jenssegers\Blade\Blade(
     $bladeContainer
 );
 
-// pasar errores a las vistas
 $blade->share('dbError', $dbError);
+$blade->share('currentRoute', parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH));
 
-// 4. inicializar enrutador
 $router = new \Bramus\Router\Router();
 
-// 5. cargar rutas
 require_once __DIR__ . '/../routes/web.php';
 
-// 6. ejecutar
 $router->run();
