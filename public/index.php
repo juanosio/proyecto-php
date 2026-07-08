@@ -2,7 +2,10 @@
 
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
 
-session_start();
+session_start([
+    'cookie_lifetime' => 86400 * 7,
+    'gc_maxlifetime'  => 86400 * 7,
+]);
 
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../app/helpers/db.php';
