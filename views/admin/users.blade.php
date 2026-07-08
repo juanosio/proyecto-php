@@ -87,9 +87,11 @@
             <button id="modal-cancel" class="btn btn--ghost" style="padding:10px 20px">
                 <i class="fa-solid fa-xmark"></i> Cancelar
             </button>
-            <a id="modal-confirm" href="#" class="btn" style="padding:10px 20px;background:rgba(255,107,107,0.12);border:1px solid rgba(255,107,107,0.2);color:#ff6b6b">
-                <i class="fa-solid fa-key"></i> Sí, resetear
-            </a>
+            <form id="modal-confirm" method="POST" action="#" style="display:inline">
+                <button type="submit" class="btn" style="padding:10px 20px;background:rgba(255,107,107,0.12);border:1px solid rgba(255,107,107,0.2);color:#ff6b6b;cursor:pointer">
+                    <i class="fa-solid fa-key"></i> Sí, resetear
+                </button>
+            </form>
         </div>
     </div>
 </div>
@@ -108,7 +110,7 @@
     document.querySelectorAll('.reset-btn').forEach(function (btn) {
         btn.addEventListener('click', function () {
             userName.textContent = btn.getAttribute('data-name');
-            confirmBtn.href = btn.getAttribute('data-url');
+            confirmBtn.action = btn.getAttribute('data-url');
             modal.style.display = 'flex';
         });
     });
