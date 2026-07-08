@@ -36,12 +36,28 @@
             </div>
         </a>
         <div class="nav-links">
-            <a href="/" class="nav-link {{ $currentRoute === '/' ? 'active' : '' }}">Inicio</a>
-            <a href="/dashboard" class="nav-link {{ $currentRoute === '/dashboard' ? 'active' : '' }}">Dashboard</a>
-            <a href="/historial" class="nav-link {{ $currentRoute === '/historial' ? 'active' : '' }}">Historial</a>
-            <a href="/canasta" class="nav-link {{ $currentRoute === '/canasta' ? 'active' : '' }}">Canasta</a>
-            <a href="/ranking" class="nav-link {{ $currentRoute === '/ranking' ? 'active' : '' }}">Ranking</a>
-            <a href="/perfil" class="nav-link {{ $currentRoute === '/perfil' ? 'active' : '' }}">Perfil</a>
+            @if($auth_logged)
+                <a href="/" class="nav-link {{ $currentRoute === '/' ? 'active' : '' }}">Inicio</a>
+                <a href="/dashboard" class="nav-link {{ $currentRoute === '/dashboard' ? 'active' : '' }}">Dashboard</a>
+                <a href="/historial" class="nav-link {{ $currentRoute === '/historial' ? 'active' : '' }}">Historial</a>
+                <a href="/canasta" class="nav-link {{ $currentRoute === '/canasta' ? 'active' : '' }}">Canasta</a>
+                <a href="/ranking" class="nav-link {{ $currentRoute === '/ranking' ? 'active' : '' }}">Ranking</a>
+                <a href="/perfil" class="nav-link {{ $currentRoute === '/perfil' ? 'active' : '' }}">Perfil</a>
+                @if($auth_admin)
+                    <a href="/admin/users" class="nav-link {{ $currentRoute === '/admin/users' ? 'active' : '' }}">Usuarios</a>
+                @endif
+                <form method="POST" action="/logout" style="display:inline">
+                    <button type="submit" class="nav-link" style="background:none;border:none;cursor:pointer;font-family:inherit;color:rgba(255,255,255,0.5);padding:8px 16px;border-radius:10px;font-size:13px;font-weight:500;transition:all 0.25s" onmouseover="this.style.color='#fff';this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.color='rgba(255,255,255,0.5)';this.style.background='none'">
+                        <i class="fa-solid fa-right-from-bracket" style="margin-right:4px"></i> Salir
+                    </button>
+                </form>
+            @else
+                <a href="/" class="nav-link {{ $currentRoute === '/' ? 'active' : '' }}">Inicio</a>
+                <a href="/login" class="nav-link {{ $currentRoute === '/login' ? 'active' : '' }}">Iniciar Sesión</a>
+                <a href="/register" class="btn btn--primary" style="padding:8px 16px;font-size:12px">
+                    <i class="fa-solid fa-user-plus" style="font-size:11px"></i> Registrate
+                </a>
+            @endif
         </div>
         <div class="nav-hamburger" id="nav-hamburger">
             <span></span><span></span><span></span>
@@ -49,12 +65,26 @@
     </nav>
 
     <div class="mobile-overlay" id="mobile-overlay">
-        <a href="/" class="nav-link {{ $currentRoute === '/' ? 'active' : '' }}">Inicio</a>
-        <a href="/dashboard" class="nav-link {{ $currentRoute === '/dashboard' ? 'active' : '' }}">Dashboard</a>
-        <a href="/historial" class="nav-link {{ $currentRoute === '/historial' ? 'active' : '' }}">Historial</a>
-        <a href="/canasta" class="nav-link {{ $currentRoute === '/canasta' ? 'active' : '' }}">Canasta</a>
-        <a href="/ranking" class="nav-link {{ $currentRoute === '/ranking' ? 'active' : '' }}">Ranking</a>
-        <a href="/perfil" class="nav-link {{ $currentRoute === '/perfil' ? 'active' : '' }}">Perfil</a>
+        @if($auth_logged)
+            <a href="/" class="nav-link {{ $currentRoute === '/' ? 'active' : '' }}">Inicio</a>
+            <a href="/dashboard" class="nav-link {{ $currentRoute === '/dashboard' ? 'active' : '' }}">Dashboard</a>
+            <a href="/historial" class="nav-link {{ $currentRoute === '/historial' ? 'active' : '' }}">Historial</a>
+            <a href="/canasta" class="nav-link {{ $currentRoute === '/canasta' ? 'active' : '' }}">Canasta</a>
+            <a href="/ranking" class="nav-link {{ $currentRoute === '/ranking' ? 'active' : '' }}">Ranking</a>
+            <a href="/perfil" class="nav-link {{ $currentRoute === '/perfil' ? 'active' : '' }}">Perfil</a>
+            @if($auth_admin)
+                <a href="/admin/users" class="nav-link {{ $currentRoute === '/admin/users' ? 'active' : '' }}">Usuarios</a>
+            @endif
+            <form method="POST" action="/logout" style="width:260px">
+                <button type="submit" class="nav-link" style="width:100%;background:none;border:none;cursor:pointer;font-family:inherit;color:rgba(255,255,255,0.5);padding:14px 32px;border-radius:12px;font-size:18px;text-align:center">
+                    <i class="fa-solid fa-right-from-bracket" style="margin-right:6px"></i> Cerrar Sesión
+                </button>
+            </form>
+        @else
+            <a href="/" class="nav-link {{ $currentRoute === '/' ? 'active' : '' }}">Inicio</a>
+            <a href="/login" class="nav-link {{ $currentRoute === '/login' ? 'active' : '' }}">Iniciar Sesión</a>
+            <a href="/register" class="nav-link" style="color:#00f5d4">Registrate</a>
+        @endif
     </div>
 
     <div style="height:80px"></div>
