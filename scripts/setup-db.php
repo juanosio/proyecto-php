@@ -51,6 +51,16 @@ $pdo->exec("
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
 ");
 
+$pdo->exec("
+    CREATE TABLE IF NOT EXISTS `password_resets` (
+        `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        `email` VARCHAR(150) NOT NULL,
+        `token` VARCHAR(255) NOT NULL,
+        `expires_at` DATETIME NOT NULL,
+        `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+");
+
 // ============================================================
 // USUARIOS DE PRUEBA - Tiene que la tabla estar vacia para que se creen
 // ============================================================

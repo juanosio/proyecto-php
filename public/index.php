@@ -20,8 +20,13 @@ $dbError = null;
 try {
     $pdo = db();
     \app\models\Model::setPdo($pdo);
-} catch (PDOException $e) {
+} catch (\Throwable $e) {
     $dbError = $e->getMessage();
+    http_response_code(500);
+    echo "<h1>Error de conexion a la base de datos</h1>";
+    echo "<p>Asegurate de que XAMPP/MySQL este corriendo y de haber ejecutado: <code>php scripts/setup-db.php</code></p>";
+    echo "<p style='color:#999;font-size:13px'>" . htmlspecialchars($dbError) . "</p>";
+    exit;
 }
 
 $bladeContainer = new \Jenssegers\Blade\Container;
