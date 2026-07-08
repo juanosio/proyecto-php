@@ -3,7 +3,6 @@ vendor/
 cache/*
 !cache/.gitkeep
 node_modules/
-public/css/tailwind.css
 public/uploads/*
 !public/uploads/.gitkeep
 tailwindcss
